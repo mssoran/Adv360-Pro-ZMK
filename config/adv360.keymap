@@ -51,7 +51,7 @@
             bindings = <
  &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &none                                                                                               &mo LMOD    &kp N6        &kp N7         &kp N8       &kp N9        &kp N0           &kp MINUS
  &kp TAB    &kp Q       &kp W         &kp E                &kp R                 &kp T          &none                                                                                               &none       &kp Y         &kp U          &kp I        &kp O         &kp P            &kp BSLH
- &kp GRAVE  &hm LALT A  &hm LCTRL S   &hm LSHIFT D         &hm LGUI F            &kp G          &none      &hlt LNAV ESC &kp LALT                                   &kp LGUI        &hlt LSYM ENTER &none       &kp H         &hm RGUI J     &hm RSHIFT K &hm RCTRL L   &hm RALT SEMI    &kp SQT
+ &kp GRAVE  &hm LALT A  &hm LCTRL S   &hm LSHIFT D         &hm LGUI F            &kp G          &none      &hlt LNAV ESC &kp LGUI                                   &kp LGUI        &hlt LSYM ENTER &none       &kp H         &hm RGUI J     &hm RSHIFT K &hm RCTRL L   &hm RALT SEMI    &kp SQT
  &kp LSHFT  &kp Z       &kp X         &kp C                &kp V                 &kp B          &none      &none         &kp HOME        &none       &none          &kp PG_UP        &none          &none       &kp N         &kp M          &kp COMMA    &kp DOT       &kp FSLH         &kp RSHFT
  &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                       &hlt LSYM SPACE &hlt LFUN TAB &kp LS(LG(LBKT))                           &kp LS(LG(RBKT)) &hm LSHIFT DEL &hlt LNAV BSPC            &kp LBKT       &kp RBKT     &kp EQUAL     &kp MINUS        &mo LNAV
             >;
@@ -61,9 +61,9 @@
             bindings = <
  &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &trans                                                                                              &mo LMOD    &kp N6        &kp KP_NUM     &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY  &kp MINUS
  &kp TAB    &kp EXCL    &kp AT        &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE       &none                                                                                               &none       &kp PLUS      &kp KP_N7      &kp KP_N8    &kp KP_N9     &kp KP_MINUS     &kp BSLH
- &kp ESC    &kp HASH    &kp DOLLAR    &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp GRAVE      &none      &trans        &kp LALT                                   &kp LGUI         &trans         &none       &kp ASTERISK  &kp KP_N4      &kp KP_N5    &kp KP_N6     &kp EQUAL        &kp SQT
+ &kp ESC    &kp HASH    &kp DOLLAR    &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp GRAVE      &none      &trans        &kp LGUI                                   &kp LGUI         &trans         &none       &kp ASTERISK  &kp KP_N4      &kp KP_N5    &kp KP_N6     &kp EQUAL        &kp SQT
  &kp LSHFT  &kp PERCENT &kp CARET     &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp AMPERSAND  &none      &none         &kp HOME        &none       &none          &kp PG_UP        &none          &none       &kp MINUS     &kp KP_N1      &kp KP_N2    &kp KP_N3     &kp KP_ENTER     &kp RSHFT
- &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                            &none      &kp TAB       &kp END                                    &kp PG_DN        &trans         &trans                    &kp KP_N0      &kp DOT      &kp KP_DOT    &kp RBKT         &mo LNAV
+ &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                            &none      &kp TAB       &kp &trans                                 &trans           &trans         &trans                    &kp KP_N0      &kp DOT      &kp KP_DOT    &kp RBKT         &mo LNAV
             >;
         };
 
