@@ -16,6 +16,7 @@
 #define LNAV 2
 #define LFUN  3
 #define LMOD 4
+#define LTR 5
 
 / {
   behaviors {
@@ -43,6 +44,24 @@
     };
   };
 
+    macros {
+        m_tr_g: m_tr_g {
+            label = "ZM_m_tr_g";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LALT>
+                , <&macro_tap &kp LEFT_BRACKET>
+                , <&macro_press &kp LALT>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -51,7 +70,7 @@
             bindings = <
  &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &none                                                                                               &mo LMOD    &kp N6        &kp N7         &kp N8       &kp N9        &kp N0           &kp MINUS
  &kp TAB    &kp Q       &kp W         &kp E                &kp R                 &kp T          &none                                                                                               &none       &kp Y         &kp U          &kp I        &kp O         &kp P            &kp BSLH
- &kp GRAVE  &hm LALT A  &hm LCTRL S   &hm LSHIFT D         &hm LGUI F            &kp G          &none      &hlt LNAV ESC &kp LGUI                                   &kp LGUI        &hlt LSYM ENTER &none       &kp H         &hm RGUI J     &hm RSHIFT K &hm RCTRL L   &hm RALT SEMI    &kp SQT
+ &kp GRAVE  &hm LALT A  &hm LCTRL S   &hm LSHIFT D         &hm LGUI F            &kp G          &none      &hlt LNAV ESC &sl LTR                                    &kp LGUI        &hlt LSYM ENTER &none       &kp H         &hm RGUI J     &hm RSHIFT K &hm RCTRL L   &hm RALT SEMI    &kp SQT
  &kp LSHFT  &kp Z       &kp X         &kp C                &kp V                 &kp B          &none      &none         &kp HOME        &none       &none          &kp PG_UP        &none          &none       &kp N         &kp M          &kp COMMA    &kp DOT       &kp FSLH         &kp RSHFT
  &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                       &hlt LSYM SPACE &hlt LFUN TAB &kp LS(LG(LBKT))                           &kp LS(LG(RBKT)) &hm LSHIFT DEL &hlt LNAV BSPC            &kp LBKT       &kp RBKT     &kp EQUAL     &kp MINUS        &mo LNAV
             >;
@@ -60,10 +79,10 @@
         layer_symbol {
             bindings = <
  &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &trans                                                                                              &mo LMOD    &kp N6        &kp KP_NUM     &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY  &kp MINUS
- &kp TAB    &kp EXCL    &kp AT        &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE       &none                                                                                               &none       &kp PLUS      &kp KP_N7      &kp KP_N8    &kp KP_N9     &kp KP_MINUS     &kp BSLH
- &kp ESC    &kp HASH    &kp DOLLAR    &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp GRAVE      &none      &trans        &kp LGUI                                   &kp LGUI         &trans         &none       &kp ASTERISK  &kp KP_N4      &kp KP_N5    &kp KP_N6     &kp EQUAL        &kp SQT
- &kp LSHFT  &kp PERCENT &kp CARET     &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp AMPERSAND  &none      &none         &kp HOME        &none       &none          &kp PG_UP        &none          &none       &kp MINUS     &kp KP_N1      &kp KP_N2    &kp KP_N3     &kp KP_ENTER     &kp RSHFT
- &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                            &none      &kp TAB       &kp &trans                                 &trans           &trans         &trans                    &kp KP_N0      &kp DOT      &kp KP_DOT    &kp RBKT         &mo LNAV
+ &kp TAB    &kp EXCL    &kp AT        &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE       &none                                                                                               &none       &kp PLUS      &kp N7         &kp N8       &kp N9        &kp MINUS        &kp BSLH
+ &kp ESC    &kp HASH    &kp DOLLAR    &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp GRAVE      &none      &trans        &kp LGUI                                   &kp LGUI         &trans         &none       &kp ASTERISK  &kp N4         &kp N5       &kp N6        &kp EQUAL        &kp SQT
+ &kp LSHFT  &kp PERCENT &kp CARET     &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp AMPERSAND  &none      &none         &kp HOME        &none       &none          &kp PG_UP        &none          &none       &kp MINUS     &kp N1         &kp N2       &kp N3        &kp ENTER        &kp RSHFT
+ &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                            &none      &kp TAB       &kp &trans                                 &trans           &trans         &trans                    &kp N0         &kp DOT      &kp KP_DOT    &kp RBKT         &mo LNAV
             >;
         };
 
@@ -95,6 +114,17 @@
  &none      &none       &none         &none                &none                 &none       &rgb_ug RGB_MEFS_CMD 5 &none &none                                     &bt BT_CLR       &none     &rgb_ug RGB_MEFS_CMD 5 &none   &none          &none        &none         &none            &none
  &none      &none       &none         &none                &none                 &none          &none       &none        &none           &none        &none         &none            &none          &none       &none         &none          &none        &none         &none            &none
  &none      &none       &none         &bl BL_INC           &bl BL_DEC                        &rgb_ug RGB_TOG &bl BL_TOG  &none                                      &none            &bl BL_TOG     &rgb_ug RGB_TOG           &bl BL_INC     &bl BL_DEC   &none         &none            &none
+            >;
+        };
+
+
+        defaultTR_layer {
+            bindings = <
+ &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5           &none                                                                                               &mo LMOD    &kp N6        &kp N7            &kp N8       &kp N9        &kp N0           &kp MINUS
+ &kp TAB    &kp Q       &kp W         &kp E                &kp R                 &kp T            &none                                                                                               &none       &kp Y         &kp RIGHT_BRACKET &kp I        &kp O         &kp P            &kp BSLH
+ &kp GRAVE  &hm LALT A  &hm LCTRL S   &hm LSHIFT D         &hm LGUI F            &m_tr_g          &none      &hlt LNAV ESC &kp LGUI                                   &kp LGUI        &hlt LSYM ENTER &none       &kp H         &hm RGUI J        &hm RSHIFT K &hm RCTRL L   &hm RALT SEMI    &kp SQT
+ &kp LSHFT  &kp Z       &kp X         &kp C                &kp V                 &kp B            &none      &none         &kp HOME        &none       &none          &kp PG_UP        &none          &none       &kp N         &kp M             &kp COMMA    &kp DOT       &kp FSLH         &kp RSHFT
+ &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                         &hlt LSYM SPACE &hlt LFUN TAB &kp LS(LG(LBKT))                           &kp LS(LG(RBKT)) &hm LSHIFT DEL &hlt LNAV BSPC            &kp LBKT          &kp RBKT     &kp EQUAL     &kp MINUS        &mo LNAV
             >;
         };
 
