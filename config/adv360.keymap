@@ -137,6 +137,16 @@
             >;
         };
 
+         layer_tr_symbol {
+             bindings = <
+  &kp TR_EQUAL &kp TR_N1    &kp TR_N2      &kp TR_N3               &kp TR_N4                &kp TR_N5         &trans                                                                                              &mo LMOD    &kp TR_N6        &kp KP_NUM  &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY  &kp TR_PIPE
+  &kp TR_TILDE &kp TR_EXCL  &kp TR_AT      &kp TR_LEFT_BRACE       &kp TR_RIGHT_BRACE       &kp TR_PIPE       &none                                                                                               &none       &kp TR_PLUS      &kp TR_N7   &kp TR_N8    &kp TR_N9     &kp TR_MINUS     &kp TR_BSLH
+  &kp TR_GRAVE &kp TR_HASH  &kp TR_DOLLAR  &kp TR_LEFT_PARENTHESIS &kp TR_RIGHT_PARENTHESIS &kp TR_COLON      &none      &trans        &kp LGUI                                   &kp LGUI         &trans         &none       &kp TR_ASTERISK  &kp TR_N4   &kp TR_N5    &kp TR_N6     &kp TR_EQUAL     &kp TR_SQT
+  &kp LSHFT  &kp TR_PERCENT &kp TR_CARET   &kp TR_LEFT_BRACKET     &kp TR_RIGHT_BRACKET     &kp TR_AMPERSAND                           &kp HOME                                   &kp PG_UP                                   &kp TR_MINUS     &kp TR_N1   &kp TR_N2    &kp TR_N3     &kp ENTER        &kp RSHFT
+  &mo LNAV   &kp TR_GRAVE   &kp CAPS       &kp LEFT                &kp RIGHT                &none             &kp TAB    &trans                                    &trans         &trans           &trans                     &kp TR_N0        &kp TR_DOT  &kp KP_DOT   &kp TR_RBKT   &mo LNAV
+             >;
+         };
+
         layer_navigation {
             bindings = <
  &kp F1     &kp F2      &kp F3        &kp F4               &kp F5                &kp F6         &none                                                                                               &mo LMOD    &kp F7        &kp F8         &kp F9       &kp F10       &kp F11          &kp F12
