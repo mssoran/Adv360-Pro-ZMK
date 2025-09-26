@@ -1,7 +1,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/stp.h>
@@ -192,7 +191,7 @@
  &kp F1     &kp F2      &kp F3        &kp F4               &kp F5                &kp F6         &none                                                                                               &mo LMOD    &kp F7          &kp F8          &kp F9        &kp F10          &kp F11          &kp F12
  &trans     &trans      &trans        &kp RC(UP)           &trans                &trans         &none                                                                                               &none       &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans           &trans
  &trans     &trans      &kp RC(LEFT)  &kp RC(DOWN)         &kp RC(RIGHT)         &trans         &none      &trans        &trans                                     &trans           &trans         &none       &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &trans           &trans
- &trans     &trans      &trans        &trans               &trans                &trans                                  &trans                                     &trans                                      &trans &trans &trans &mmv MOUSE_RIGHT &trans           &trans
+ &trans     &trans      &trans        &trans               &trans                &trans                                  &trans                                     &trans                                      &trans &trans &trans &mmv MOVE_RIGHT &trans           &trans
  &trans     &trans      &trans        &trans               &trans                               &trans     &trans        &trans                                     &trans           &trans         &trans                      &mkp LCLK       &mkp RCLK     &trans           &trans           &trans
             >;
         };
