@@ -3,7 +3,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/stp.h>
 #include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/pointing.h>
 #include "keys_tr.h"
 
 #define LDEF 0
@@ -71,6 +73,25 @@
         quick_tap_ms = <200>;
         flavor = "balanced";
         bindings = <&mo>, <&kp>;
+    };
+    extra1 { 
+      display-name = "Red";    
+      status = "reserved";
+    };
+
+    extra2 { 
+      display-name = "Purple";    
+      status = "reserved";
+    };
+
+    extra3 { 
+      display-name = "Cyan";    
+      status = "reserved";
+    };
+
+    extra4 { 
+      display-name = "Yellow";    
+      status = "reserved";
     };
   };
 
