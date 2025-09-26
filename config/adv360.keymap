@@ -205,7 +205,7 @@
  &trans     &trans      &trans        &kp RC(UP)           &trans                &trans         &none                                                                                               &none       &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans           &trans
  &trans     &trans      &kp RC(LEFT)  &kp RC(DOWN)         &kp RC(RIGHT)         &trans         &none      &trans        &trans                                     &trans           &trans         &none       &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &trans           &trans
  &trans     &trans      &trans        &trans               &trans                &trans                                  &trans                                     &trans                                      &trans &trans &trans &trans &trans           &trans
- &trans     &trans      &trans        &trans               &trans                               &trans     &trans        &trans                                     &trans           &trans         &trans                      &trans       &trans     &trans           &trans           &trans
+ &trans     &trans      &trans        &trans               &trans                               &trans     &trans        &trans                                     &trans           &trans         &trans                      &mkp LCLK       &mkp RCLK     &trans           &trans           &trans
             >;
         };
 
