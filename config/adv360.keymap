@@ -105,25 +105,6 @@
         flavor = "balanced";
         bindings = <&mo>, <&kp>;
     };
-    extra1 { 
-      display-name = "Red";    
-      status = "reserved";
-    };
-
-    extra2 { 
-      display-name = "Purple";    
-      status = "reserved";
-    };
-
-    extra3 { 
-      display-name = "Cyan";    
-      status = "reserved";
-    };
-
-    extra4 { 
-      display-name = "Yellow";    
-      status = "reserved";
-    };
   };
 
     macros {
@@ -149,6 +130,7 @@
 
 
         default_layer {
+            display-name = "Base";
             bindings = <
  &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &none                                                                                               &mo LMOD    &kp N6        &kp N7         &kp N8       &kp N9        &kp N0           &kp PIPE
  &kp TILDE  &kp Q       &kp W         &kp E                &kp R                 &kp T          &none                                                                                               &none       &kp Y         &kp U          &kp I        &kp O         &kp P            &kp BSLH
@@ -159,6 +141,7 @@
         };
 
         default_layer_tr {
+            display-name = "BaseTR";
             bindings = <
  &kp TR_EQUAL &kp TR_N1     &kp TR_N2      &kp TR_N3            &kp TR_N4         &kp TR_N5            &none                                                                                               &mo LMOD   &kp TR_N6        &kp TR_N7         &kp TR_N8       &kp TR_N9        &kp TR_N0           &kp TR_PIPE
  &kp TR_TILDE &kp TR_Q      &kp TR_W       &kp TR_E             &kp TR_R          &kp TR_T             &none                                                                                               &none      &kp TR_Y         &kp TR_U          &kp TR_I        &kp TR_O         &kp TR_P            &kp TR_BSLH
@@ -169,6 +152,7 @@
         };
 
         default_layer_tr_chars {
+            display-name = "BaseTRchars";
             bindings = <
  &kp TR_EQUAL &kp TR_N1     &kp TR_N2              &kp TR_N3            &kp TR_N4         &kp TR_N5            &none                                                                                               &mo LMOD   &kp TR_N6        &kp TR_N7         &kp TR_N8        &kp TR_N9        &kp TR_N0           &kp TR_PIPE
  &kp TR_TILDE &kp TR_Q      &kp TR_W               &kp TR_E             &kp TR_R          &kp TR_T             &none                                                                                               &none      &kp TR_Y         &kp TR_U_UMLAUT   &kp TR_I_DOTLESS &kp TR_O_UMLAUT  &kp TR_P            &kp TR_BSLH
@@ -180,6 +164,7 @@
 
 
         layer_symbol {
+            display-name = "Symbols";
             bindings = <
  &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &trans                                                                                              &mo LMOD    &kp N6        &kp KP_NUM     &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY  &kp PIPE
  &kp TILDE  &kp EXCL    &kp AT        &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE       &none                                                                                               &none       &kp PLUS      &kp N7         &kp N8       &kp N9        &kp MINUS        &kp BSLH
@@ -190,7 +175,8 @@
         };
 
          layer_tr_symbol {
-             bindings = <
+            display-name = "SymbolsTR";
+            bindings = <
   &kp TR_EQUAL &kp TR_N1    &kp TR_N2      &kp TR_N3               &kp TR_N4                &kp TR_N5         &trans                                                                                              &mo LMOD    &kp TR_N6        &kp KP_NUM  &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY  &kp TR_PIPE
   &kp TR_TILDE &kp TR_EXCL  &kp TR_AT      &kp TR_LEFT_BRACE       &kp TR_RIGHT_BRACE       &kp TR_PIPE       &none                                                                                               &none       &kp TR_PLUS      &kp TR_N7   &kp TR_N8    &kp TR_N9     &kp TR_MINUS     &kp TR_BSLH
   &kp TR_GRAVE &kp TR_HASH  &kp TR_DOLLAR  &kp TR_LEFT_PARENTHESIS &kp TR_RIGHT_PARENTHESIS &kp TR_COLON      &none      &trans        &kp LGUI                                   &kp LGUI         &trans         &none       &kp TR_ASTERISK  &kp TR_N4   &kp TR_N5    &kp TR_N6     &kp TR_EQUAL     &kp TR_SQT
@@ -200,6 +186,7 @@
          };
 
         layer_navigation {
+            display-name = "Nav";
             bindings = <
  &kp F1     &kp F2      &kp F3        &kp F4               &kp F5                &kp F6         &none                                                                                               &mo LMOD    &kp F7          &kp F8          &kp F9        &kp F10          &kp F11          &kp F12
  &trans     &trans      &trans        &kp RC(UP)           &trans                &trans         &none                                                                                               &none       &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans           &trans
@@ -210,6 +197,7 @@
         };
 
         layer_function {
+            display-name = "Fun";
             bindings = <
  &kp F1     &kp F2      &kp F3        &kp F4               &kp F5                &kp F6         &none                                                                                               &mo LMOD    &trans        &kp F10        &kp F11      &kp F12       &trans           &trans
  &trans     &trans      &trans        &kp RC(UP)           &trans                &trans         &none                                                                                               &none       &trans        &kp F7         &kp F8       &kp F9        &trans           &trans
@@ -220,6 +208,7 @@
         };
 
         layer_mod {
+            display-name = "Mod";
             bindings = <
  &none     &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3          &bt BT_SEL 4   &none                                                                                               &trans      &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4     &none
  &none      &none       &none         &none                &none                 &none          &bootloader                                                                                         &bootloader &none         &none          &none        &none         &none            &none
