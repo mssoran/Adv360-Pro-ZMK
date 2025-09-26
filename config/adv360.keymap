@@ -39,11 +39,11 @@
     compatible = "zmk,combos";
     combo_esc {
       timeout-ms = <50>;
-      key-positions = <47 48>;
+      key-positions = <49 50>;
       bindings = <&kp ESC>;
     };
     combo_aha {
-      timeout-ms = <50>;
+      timeout-ms = <100>;
       key-positions = <0 1>;
       bindings = <&kp Y>;
     };
