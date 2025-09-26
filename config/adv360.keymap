@@ -53,13 +53,13 @@
       bindings = <&kp DEL>;
     };
     combo_scrolup {
-      timeout-ms = <100>;
+      timeout-ms = <40>;
       key-positions = <23 24 25>;
       bindings = <&msc SCRL_UP>;
       layers =<LNAV>;
     };
     combo_scroldown {
-      timeout-ms = <100>;
+      timeout-ms = <40>;
       key-positions = <55 56 57>;
       bindings = <&msc SCRL_DOWN>;
       layers =<LNAV>;
