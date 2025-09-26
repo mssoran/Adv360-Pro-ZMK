@@ -56,13 +56,13 @@
       timeout-ms = <40>;
       key-positions = <23 24 25>;
       bindings = <&msc SCRL_UP>;
-      layers =<LNAV>;
+      layers = <LNAV>;
     };
     combo_scroldown {
       timeout-ms = <40>;
       key-positions = <55 56 57>;
       bindings = <&msc SCRL_DOWN>;
-      layers =<LNAV>;
+      layers = <LNAV>;
     };
   };
 
@@ -204,8 +204,8 @@
  &kp F1     &kp F2      &kp F3        &kp F4               &kp F5                &kp F6         &none                                                                                               &mo LMOD    &kp F7          &kp F8          &kp F9        &kp F10          &kp F11          &kp F12
  &trans     &trans      &trans        &kp RC(UP)           &trans                &trans         &none                                                                                               &none       &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans           &trans
  &trans     &trans      &kp RC(LEFT)  &kp RC(DOWN)         &kp RC(RIGHT)         &trans         &none      &trans        &trans                                     &trans           &trans         &none       &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &trans           &trans
- &trans     &trans      &trans        &trans               &trans                &trans                                  &trans                                     &trans                                      &mmv MOUSE_LEFT &mmv MOUSE_DOWN &mmv MOUSE_UP &mmv MOUSE_RIGHT &trans           &trans
- &trans     &trans      &trans        &trans               &trans                               &trans     &trans        &trans                                     &trans           &trans         &trans                      &mkp LCLK       &mkp RCLK     &trans           &trans           &trans
+ &trans     &trans      &trans        &trans               &trans                &trans                                  &trans                                     &trans                                      &trans &trans &trans &trans &trans           &trans
+ &trans     &trans      &trans        &trans               &trans                               &trans     &trans        &trans                                     &trans           &trans         &trans                      &trans       &trans     &trans           &trans           &trans
             >;
         };
 
