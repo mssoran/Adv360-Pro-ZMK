@@ -9,29 +9,10 @@
 #include "keys_tr.h"
 
 #define LDEF 0
-#define LTRDEF 1
-#define LTRCHARS 2
-#define LSYM 3
-#define LTRSYM 4
-#define LNAV 5
-#define LFUN 6
-#define LMOD 7
-
-#define TR_KEY_MACRO(name, trKey) name: name {   \
-            label = ZMK_MACRO_STRINGIFY(ZM_ ## name) \
-            compatible = "zmk,behavior-macro"; \
-            #binding-cells = <0>; \
-            bindings \
-                = <&macro_press &kp LALT> \
-                , <&macro_tap &kp SPACE> \
-                , <&macro_release &kp LALT> \
-                , <&macro_tap &kp trKey> \
-                , <&macro_pause_for_release> \
-                , <&macro_press &kp LALT> \
-                , <&macro_tap &kp SPACE> \
-                , <&macro_release &kp LALT> \
-                ; \
-        };
+#define LSYM 1
+#define LNAV 2
+#define LFUN 3
+#define LMOD 4
 
 
 / {
@@ -42,25 +23,20 @@
       key-positions = <49 50>;
       bindings = <&kp ESC>;
     };
-    combo_aha {
-      timeout-ms = <100>;
-      key-positions = <0 1>;
-      bindings = <&kp Y>;
-    };
     combo_del {
-      timeout-ms = <100>;
+      timeout-ms = <50>;
       key-positions = <55 56>;
       bindings = <&kp DEL>;
     };
     combo_scrolup {
-      timeout-ms = <40>;
-      key-positions = <23 24 25>;
+      timeout-ms = <50>;
+      key-positions = <41 42>;
       bindings = <&msc SCRL_UP>;
       layers = <LNAV>;
     };
     combo_scroldown {
-      timeout-ms = <40>;
-      key-positions = <55 56 57>;
+      timeout-ms = <50>;
+      key-positions = <55 56>;
       bindings = <&msc SCRL_DOWN>;
       layers = <LNAV>;
     };
@@ -132,33 +108,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
- &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &none                                                                                               &mo LMOD    &kp N6        &kp N7         &kp N8       &kp N9        &kp N0           &kp PIPE
- &kp TILDE  &kp Q       &kp W         &kp E                &kp R                 &kp T          &none                                                                                               &none       &kp Y         &kp U          &kp I        &kp O         &kp P            &kp BSLH
- &kp GRAVE  &hm LALT A  &hm LCTRL S   &hm LSHIFT D         &hm LGUI F            &hm LALT G     &caps_word &hlt LNAV ESC &to LTRDEF                                 &kp LGUI         &hlt LSYM ENTER &caps_word &hm RALT H    &hm RGUI J     &hm RSHIFT K &hm RCTRL L   &hm RALT SEMI    &kp SQT
- &kp LSHFT  &kp Z       &kp X         &kp C                &kp V                 &kp B                                   &kp HOME                                   &kp PG_UP                                   &kp N         &kp M          &kp COMMA    &kp DOT       &kp FSLH         &kp DQT
- &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                       &hlt LSYM SPACE &hlt LFUN TAB &kp LS(LG(LBKT))                           &kp LS(LG(RBKT)) &hm LSHIFT DEL &hlt LNAV BSPC            &kp LBKT       &kp RBKT     &kp EQUAL     &kp MINUS        &mo LNAV
-            >;
-        };
-
-        default_layer_tr {
-            display-name = "BaseTR";
-            bindings = <
- &kp TR_EQUAL &kp TR_N1     &kp TR_N2      &kp TR_N3            &kp TR_N4         &kp TR_N5            &none                                                                                               &mo LMOD   &kp TR_N6        &kp TR_N7         &kp TR_N8       &kp TR_N9        &kp TR_N0           &kp TR_PIPE
- &kp TR_TILDE &kp TR_Q      &kp TR_W       &kp TR_E             &kp TR_R          &kp TR_T             &none                                                                                               &none      &kp TR_Y         &kp TR_U          &kp TR_I        &kp TR_O         &kp TR_P            &kp TR_BSLH
- &kp TR_GRAVE &hm LALT TR_A &hm LCTRL TR_S &hm LSHIFT TR_D      &hm LGUI TR_F     &hlt LTRCHARS TR_G   &none      &hlt LNAV ESC &to LDEF                                     &kp LGUI       &hlt LTRSYM ENTER &none   &hlt LTRCHARS TR_H &hm RGUI TR_J   &hm RSHIFT TR_K &hm RCTRL TR_L   &hm RALT TR_SEMI    &kp TR_SQT
- &kp LSHFT    &kp TR_Z      &kp TR_X       &kp TR_C             &kp TR_V          &kp TR_B                                      &kp HOME                                     &kp PG_UP                                &kp TR_N         &kp TR_M          &kp TR_COMMA    &kp TR_DOT       &kp TR_FSLH         &kp TR_DQT
- &mo LNAV     &kp TR_GRAVE  &kp CAPS       &kp LEFT             &kp RIGHT         &hlt LTRSYM TR_SPACE &hlt LFUN TAB &kp LS(LG(LBKT))                       &kp LS(LG(RBKT)) &hm LSHIFT DEL &hlt LNAV BSPC            &kp TR_LBKT      &kp TR_RBKT       &kp TR_EQUAL    &kp TR_MINUS     &mo LNAV
-            >;
-        };
-
-        default_layer_tr_chars {
-            display-name = "BaseTRchars";
-            bindings = <
- &kp TR_EQUAL &kp TR_N1     &kp TR_N2              &kp TR_N3            &kp TR_N4         &kp TR_N5            &none                                                                                               &mo LMOD   &kp TR_N6        &kp TR_N7         &kp TR_N8        &kp TR_N9        &kp TR_N0           &kp TR_PIPE
- &kp TR_TILDE &kp TR_Q      &kp TR_W               &kp TR_E             &kp TR_R          &kp TR_T             &none                                                                                               &none      &kp TR_Y         &kp TR_U_UMLAUT   &kp TR_I_DOTLESS &kp TR_O_UMLAUT  &kp TR_P            &kp TR_BSLH
- &kp TR_GRAVE &hm LALT TR_A &hm LCTRL TR_S_CEDILLA &hm LSHIFT TR_D      &hm LGUI TR_F     &kp TR_G_BREVE       &none      &hlt LNAV ESC &to LDEF                                     &kp LGUI       &hlt LTRSYM ENTER &none   &kp TR_H         &hm RGUI TR_J     &hm RSHIFT TR_K  &hm RCTRL TR_L   &hm RALT TR_SEMI    &kp TR_SQT
- &kp LSHFT    &kp TR_Z      &kp TR_X               &kp TR_C_CEDILLA     &kp TR_V          &kp TR_B                                      &kp HOME                                     &kp PG_UP                                &kp TR_N         &kp TR_M          &kp TR_COMMA     &kp TR_DOT       &kp TR_FSLH         &kp TR_DQT
- &mo LNAV     &kp TR_GRAVE  &kp CAPS               &kp LEFT             &kp RIGHT         &hlt LTRSYM TR_SPACE &hlt LFUN TAB &kp LS(LG(LBKT))                       &kp LS(LG(RBKT)) &hm LSHIFT DEL &hlt LNAV BSPC            &kp TR_LBKT      &kp TR_RBKT       &kp TR_EQUAL     &kp TR_MINUS     &mo LNAV
+ &kp X      &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &none                                                                                               &mo LMOD    &kp N6        &kp N7         &kp N8       &kp N9        &kp N0           &kp X
+ &kp X      &kp Q       &kp W         &kp E                &kp R                 &kp T          &none                                                                                               &none       &kp Y         &kp U          &kp I        &kp O         &kp P            &kp X
+ &kp X      &hm LALT A  &hm LCTRL S   &hm LSHIFT D         &hm LGUI F            &hm LALT G     &caps_word &kp X         &to LTRDEF                                 &kp LGUI         &kp X          &caps_word  &hm RALT H    &hm RGUI J     &hm RSHIFT K &hm RCTRL L   &hm RALT SEMI    &kp X
+ &kp X      &kp Z       &kp X         &kp C                &kp V                 &kp B                                   &kp HOME                                   &kp PG_UP                                   &kp N         &kp M          &kp COMMA    &kp DOT       &kp FSLH         &kp X
+ &mo X      &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                       &hlt LSYM SPACE &hlt LFUN TAB &kp LS(LG(LBKT))                           &kp LS(LG(RBKT)) &kp ENTER      &hlt LNAV BSPC            &kp LBKT       &kp RBKT     &kp EQUAL     &kp MINUS        &mo LNAV
             >;
         };
 
@@ -166,33 +120,22 @@
         layer_symbol {
             display-name = "Symbols";
             bindings = <
- &kp EQUAL  &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &trans                                                                                              &mo LMOD    &kp N6        &kp KP_NUM     &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY  &kp PIPE
- &kp TILDE  &kp EXCL    &kp AT        &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE       &none                                                                                               &none       &kp PLUS      &kp N7         &kp N8       &kp N9        &kp MINUS        &kp BSLH
- &kp GRAVE  &kp HASH    &kp DOLLAR    &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp COLON      &none      &trans        &kp LGUI                                   &kp LGUI         &trans         &none       &kp ASTERISK  &kp N4         &kp N5       &kp N6        &kp EQUAL        &kp SQT
- &kp LSHFT  &kp PERCENT &kp CARET     &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp AMPERSAND                           &kp HOME                                   &kp PG_UP                                   &kp MINUS     &kp N1         &kp N2       &kp N3        &kp ENTER        &kp RSHFT
- &mo LNAV   &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                            &none      &kp TAB       &trans                                     &trans           &trans         &trans                    &kp N0         &kp DOT      &kp KP_DOT    &kp RBKT         &mo LNAV
+ &kp X      &kp N1      &kp N2        &kp N3               &kp N4                &kp N5         &trans                                                                                              &mo LMOD    &kp N6        &kp KP_NUM     &kp KP_EQUAL  &kp KP_DIVIDE    &kp KP_MULTIPLY  &kp X
+ &kp X      &kp GRAVE   &kp AT        &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PLUS       &none                                                                                               &none       &kp PIPE      &kp PERCENT    &caps_word    &kp SQT          &kp BSLH         &kp X
+ &kp X      &kp CARET   &kp DOLLAR    &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp ASTERISK   &none      &trans        &kp LGUI                                   &kp LGUI         &trans         &none       &kp AMPERSAND &kp EQUAL      &kp EXCL      &kp DQT          &kp COLON        &kp X
+ &kp X      &kp PERCENT &kp TILDE     &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp MINUS                               &kp HOME                                   &kp PG_UP                                   &kp HASH      &kp UNDERSCORE &kp LESS_THAN &kp GREATER_THAN &kp FSLH         &kp X
+ &mo X      &kp GRAVE   &kp CAPS      &kp LEFT             &kp RIGHT                            &none      &kp TAB       &trans                                     &trans           &trans         &trans                    &kp N0         &kp DOT       &kp KP_DOT       &kp RBKT         &mo LNAV
             >;
         };
-
-         layer_tr_symbol {
-            display-name = "SymbolsTR";
-            bindings = <
-  &kp TR_EQUAL &kp TR_N1    &kp TR_N2      &kp TR_N3               &kp TR_N4                &kp TR_N5         &trans                                                                                              &mo LMOD    &kp TR_N6        &kp KP_NUM  &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY  &kp TR_PIPE
-  &kp TR_TILDE &kp TR_EXCL  &kp TR_AT      &kp TR_LEFT_BRACE       &kp TR_RIGHT_BRACE       &kp TR_PIPE       &none                                                                                               &none       &kp TR_PLUS      &kp TR_N7   &kp TR_N8    &kp TR_N9     &kp TR_MINUS     &kp TR_BSLH
-  &kp TR_GRAVE &kp TR_HASH  &kp TR_DOLLAR  &kp TR_LEFT_PARENTHESIS &kp TR_RIGHT_PARENTHESIS &kp TR_COLON      &none      &trans        &kp LGUI                                   &kp LGUI         &trans         &none       &kp TR_ASTERISK  &kp TR_N4   &kp TR_N5    &kp TR_N6     &kp TR_EQUAL     &kp TR_SQT
-  &kp LSHFT  &kp TR_PERCENT &kp TR_CARET   &kp TR_LEFT_BRACKET     &kp TR_RIGHT_BRACKET     &kp TR_AMPERSAND                           &kp HOME                                   &kp PG_UP                                   &kp TR_MINUS     &kp TR_N1   &kp TR_N2    &kp TR_N3     &kp ENTER        &kp RSHFT
-  &mo LNAV   &kp TR_GRAVE   &kp CAPS       &kp LEFT                &kp RIGHT                &none             &kp TAB    &trans                                    &trans         &trans           &trans                     &kp TR_N0        &kp TR_DOT  &kp KP_DOT   &kp TR_RBKT   &mo LNAV
-             >;
-         };
 
         layer_navigation {
             display-name = "Nav";
             bindings = <
- &kp F1     &kp F2      &kp F3        &kp F4               &kp F5                &kp F6         &none                                                                                               &mo LMOD    &kp F7          &kp F8          &kp F9        &kp F10          &kp F11          &kp F12
- &trans     &trans      &trans        &kp RC(UP)           &trans                &trans         &none                                                                                               &none       &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans           &trans
- &trans     &trans      &kp RC(LEFT)  &kp RC(DOWN)         &kp RC(RIGHT)         &trans         &none      &trans        &trans                                     &trans           &trans         &none       &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &trans           &trans
- &trans     &trans      &trans        &trans               &trans                &trans                                  &trans                                     &trans                                      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans           &trans
- &trans     &trans      &trans        &trans               &trans                               &trans     &trans        &trans                                     &trans           &trans         &trans                      &mkp LCLK       &mkp RCLK     &trans           &trans           &trans
+ &kp F1     &kp F2      &kp F3        &kp F4               &kp F5                &kp F6         &none                                                                                               &mo LMOD    &kp F7          &kp F8       &kp F9         &kp F10          &kp F11          &kp F12
+ &trans     &trans      &kp RC(UP)    &kp RC(LEFT)         &kp RC(RIGHT)         &kp PLUS       &none                                                                                               &none       &kp HOME        &kp PG_DN    &kp PG_UP      &kp END          &trans           &trans
+ &trans     &trans      &kp RC(DOWN)  &kp LS(LG(LBKT))     &kp LS(LG(RBKT))      &kp ASTERISK   &none      &trans        &trans                                     &trans           &trans         &none       &kp LEFT        &kp DOWN     &kp UP         &kp RIGHT        &mkp RCLK        &trans
+ &trans     &trans      &trans        &kp LS(LG(GRAVE))    &kp LG(GRAVE)         &kp MINUS                               &trans                                     &trans                                      &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT  &mkp LCLK        &trans
+ &trans     &trans      &trans        &trans               &trans                               &to LNAV   &trans        &trans                                     &trans           &trans         &trans                      &mkp LCLK    &mkp RCLK      &trans           &trans           &trans
             >;
         };
 
@@ -200,10 +143,10 @@
             display-name = "Fun";
             bindings = <
  &kp F1     &kp F2      &kp F3        &kp F4               &kp F5                &kp F6         &none                                                                                               &mo LMOD    &trans        &kp F10        &kp F11      &kp F12       &trans           &trans
- &trans     &trans      &trans        &kp RC(UP)           &trans                &trans         &none                                                                                               &none       &trans        &kp F7         &kp F8       &kp F9        &trans           &trans
- &trans     &trans      &kp RC(LEFT)  &kp RC(DOWN)         &kp RC(RIGHT)         &trans         &none      &trans        &caps_word                                 &trans           &trans         &none       &trans        &kp F4         &kp F5       &kp F6        &trans           &trans
- &trans     &trans      &trans        &trans               &trans                &trans                                  &trans                                     &trans                                      &trans        &kp F1         &kp F2       &kp F3        &trans           &trans
- &trans     &trans      &trans        &trans               &trans                               &trans     &trans        &trans                                     &trans           &trans         &trans                    &trans         &trans       &trans        &trans           &trans
+ &trans     &trans      &kp RC(UP)    &kp RC(LEFT)         &kp RC(RIGHT)         &kp PLUS       &none                                                                                               &none       &trans        &kp F7         &kp F8       &kp F9        &trans           &trans
+ &trans     &trans      &kp RC(DOWN)  &kp LS(LG(LBKT))     &kp LS(LG(RBKT))      &kp ASTERISK   &none      &trans        &caps_word                                 &trans           &trans         &none       &trans        &kp F4         &kp F5       &kp F6        &trans           &trans
+ &trans     &trans      &trans        &kp LS(LG(GRAVE))    &kp LG(GRAVE)         &kp MINUS                               &trans                                     &trans                                      &trans        &kp F1         &kp F2       &kp F3        &trans           &trans
+ &trans     &trans      &trans        &trans               &trans                               &to LFUN   &trans        &trans                                     &trans           &trans         &trans                    &trans         &trans       &trans        &trans           &trans
             >;
         };
 
