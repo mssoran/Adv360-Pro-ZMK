@@ -30,13 +30,13 @@
     };
     combo_scrolup {
       timeout-ms = <50>;
-      key-positions = <41 42>;
+      key-positions = <23 24>;
       bindings = <&msc SCRL_UP>;
       layers = <LNAV>;
     };
     combo_scroldown {
       timeout-ms = <50>;
-      key-positions = <55 56>;
+      key-positions = <41 42>;
       bindings = <&msc SCRL_DOWN>;
       layers = <LNAV>;
     };
